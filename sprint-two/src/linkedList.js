@@ -3,10 +3,20 @@ var LinkedList = function() {
   list.head = null;
   list.tail = null;
 
+
   list.addToTail = function(value) {
+    var node = Node(value);
+    if (list.head === null) {
+      list.head = node;
+    } else {
+      list.tail.next = node;
+    }
+    list.tail = node;
   };
 
   list.removeHead = function() {
+    //make thing to be removed
+
   };
 
   list.contains = function(target) {
