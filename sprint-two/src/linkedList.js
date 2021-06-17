@@ -3,7 +3,7 @@ var LinkedList = function() {
   list.head = null;
   list.tail = null;
 
-
+  //Time Complexity: O(1)
   list.addToTail = function(value) {
     var node = Node(value);
     if (list.head === null) {
@@ -13,13 +13,25 @@ var LinkedList = function() {
     }
     list.tail = node;
   };
-
+  //Time Complexity: O(1)
   list.removeHead = function() {
-    //make thing to be removed
+    var removedNode = list.head;
+    list.head = list.head.next;
 
+    return removedNode.value;
   };
 
+
+  //Time Complexity: O(n)
   list.contains = function(target) {
+   var ptr = list.head;
+      while (ptr) {
+         if(ptr.value === target) {
+          return true;
+        }
+       ptr = ptr.next;
+      }
+      return false;
   };
 
   return list;
