@@ -18,6 +18,7 @@ queueMethods.enqueue = function(value) {
     this.end++
   };
 
+  //remove
   queueMethods.dequeue = function() {
     var del = this.storage[this.start];
     delete this.storage[this.start];
