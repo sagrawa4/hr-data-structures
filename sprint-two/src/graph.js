@@ -25,17 +25,17 @@ Graph.prototype.addNode = function(node) {
 
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
 Graph.prototype.contains = function(node) {
-if (this.object[node] !== undefined) {
-  return true;
-} else {
-  return false;
-}
+  if (this.object[node] !== undefined) {
+    return true;
+  } else {
+    return false;
+  }
 
 };
 
 // Removes a node from the graph.
 Graph.prototype.removeNode = function(node) {
-delete this.object[node];
+  delete this.object[node];
 };
 
 // Returns a boolean indicating whether two specified nodes are connected.  Pass in the values contained in each of the two nodes.
@@ -45,8 +45,8 @@ Graph.prototype.hasEdge = function(fromNode, toNode) {
   if (arr.length === 0) {
     return false;
   }
-  for( var i = 0; i < arr.length; i++) {
-    if(arr[i] === toNode) {
+  for ( var i = 0; i < arr.length; i++) {
+    if (arr[i] === toNode) {
       return true;
     } else {
       return false;
@@ -54,6 +54,7 @@ Graph.prototype.hasEdge = function(fromNode, toNode) {
   }
 
 };
+
 
 // 4 : [];
 // 5 : [4];
@@ -67,8 +68,8 @@ Graph.prototype.addEdge = function(fromNode, toNode) {
 Graph.prototype.removeEdge = function(fromNode, toNode) {
   var emptyArr = [];
   var arr = this.object[fromNode];
-  for( var i =0 ; i < arr.length; i++) {
-    if(arr[i] !== toNode) {
+  for ( var i = 0; i < arr.length; i++) {
+    if (arr[i] !== toNode) {
       emptyArr.push(arr[i]);
     }
   }

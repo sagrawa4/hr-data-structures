@@ -4,10 +4,11 @@ var Stack = function() {
 
   var someInstance = Object.create(stackMethods);// here someInstance is a delegating object. Any failed lookup in someInstance, takes a lookup into stackMethods onject
 
-   someInstance.storage = {};
+  someInstance.storage = {};
 
   return someInstance;
-}
+};
+
 var key = 0;
 var stackMethods = {};
 
@@ -21,11 +22,11 @@ stackMethods.pop = function() {
   delete this.storage[key];
   key--;
   return del;
-}
+};
 
 stackMethods.size = function() {
-  var length =0;
-  for(var i in this.storage) {
+  var length = 0;
+  for (var i in this.storage) {
     length++;
   }
   return length;
