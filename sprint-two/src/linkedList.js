@@ -24,14 +24,14 @@ var LinkedList = function() {
 
   //Time Complexity: O(n)
   list.contains = function(target) {
-   var ptr = list.head;
-      while (ptr) {
-         if(ptr.value === target) {
-          return true;
-        }
-       ptr = ptr.next;
+    var ptr = list.head;
+    while (ptr) {
+      if (ptr.value === target) {
+        return true;
       }
-      return false;
+      ptr = ptr.next;
+    }
+    return false;
   };
 
   return list;

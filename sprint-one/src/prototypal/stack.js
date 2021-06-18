@@ -2,7 +2,7 @@ var Stack = function() {
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
   // but try not not reference your old code in writing the new style.
 
-  var someInstance = Object.create(stackMethods);
+  var someInstance = Object.create(stackMethods);// here someInstance is a delegating object. Any failed lookup in someInstance, takes a lookup into stackMethods onject
 
    someInstance.storage = {};
 
