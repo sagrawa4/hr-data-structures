@@ -20,7 +20,6 @@ treeMethods.contains = function(target) {
   //traverse nodes until target is found (depth first search?)
   if (this.value === target) {
     //return true if found
-    console.log(this.children.value);
     return true;
   } if (this.children.length > 0) {
     //iterate through this.children
