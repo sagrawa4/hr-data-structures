@@ -8,6 +8,9 @@ var Graph = function() {
 // Add a node to the graph, passing in the node's value.
 Graph.prototype.addNode = function(node) {
   this.object[node] = [];
+  //Andrew added next two
+  // this.object[node]['value'] = node;
+  // this.object[node]['edges'] = [];
 };
 
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
@@ -49,16 +52,13 @@ Graph.prototype.hasEdge = function(fromNode, toNode) {
 
   var hasEdgeDirectionOne = false;
   var hasEdgeDirectionOpposite = false;
-
   if (this.object[fromNode].includes(toNode)) {
     hasEdgeDirectionOne = true;
   }
 
-
   if (this.object[toNode] !== undefined && this.object[toNode].includes(fromNode)) {
     hasEdgeDirectionOpposite = true;
   }
-
   if (hasEdgeDirectionOne && hasEdgeDirectionOpposite) {
     return true;
   } else {
@@ -69,6 +69,7 @@ Graph.prototype.hasEdge = function(fromNode, toNode) {
 Graph.prototype.addEdge = function(fromNode, toNode) {
   this.object[fromNode].push(toNode);
   this.object[toNode].push(fromNode);
+
 };
 
 // Remove an edge between any two specified (by value) nodes.
@@ -100,9 +101,9 @@ Graph.prototype.removeEdge = function(fromNode, toNode) {
 
 // Pass in a callback which will be executed on each node of the graph.
 Graph.prototype.forEachNode = function(cb) {
-  _.each(this.object, function(item) {
-    return cb(item);
-  });
+  for (var key in this.object) {
+    cb(Number(key)); // Changed the key from strings to number
+  }
 
 };
 
